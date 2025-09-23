@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LIVE VISION</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome 6.5.1 (sans integrity, crossorigin, et referrerpolicy) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="nav-container">
+        <div class="tabs-container">
+          <div class="tabbed-menu">
+            <a
+              id="nav-stream"
+              class="tab active"
+              href="#"
+              onclick="navigateTo('page-stream')"
+              >STREAM PAGE</a
+            >
+            <a
+              id="nav-football"
+              class="tab"
+              href="#"
+              onclick="navigateTo('page-football')"
+              >ALL SPORTS EVENT</a
+            >
+            <a
+              id="nav-channels"
+              class="tab"
+              href="#"
+              onclick="navigateTo('page-channels')"
+              >ALL CHANNELS</a
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Bouton dark mode flottant -->
+    <theme-toggle class="floating">
+      <button class="theme-toggle" aria-label="Toggle theme" data-theme-toggle>
+        <i class="fas fa-sun sun"></i>
+        <i class="fas fa-moon moon"></i>
+      </button>
+    </theme-toggle>
+
+    <main>
+      <!-- STREAM PAGE -->
+      <section id="page-stream" class="page active">
+        <div class="stream-section">
+          <div class="stream-input-box">
+            <h3>ENTER STREAM URL</h3>
+            <div class="input-container">
+              <input
+                type="text"
+                id="stream-url"
+                class="input-field"
+                placeholder="Enter stream URL"
+                value=""
+              />
+              <button id="load-stream" class="play-button">PLAY</button>
+            </div>
+          </div>
+          <iframe
+            id="live-stream"
+            width="100%"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
+          <div class="more-links">
+            <button id="cinema-mode" class="more-button">CINEMA MODE</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ALL SPORTS EVENT -->
+      <section id="page-football" class="page hidden">
+        <div class="loading-indicator" id="sports-loading">
+          Loading events...
+        </div>
+        <div
+          class="error-message"
+          id="sports-error"
+          style="display: none"
+        ></div>
+        <div class="event-filter-box">
+          <div class="filter-container">
+            <label for="sport-filter">FILTER BY SPORT</label>
+            <select id="sport-filter" class="input-field">
+              <option value="">All</option>
+            </select>
+          </div>
+          <div class="filter-container">
+            <label for="date-filter">FILTER BY DATE</label>
+            <select id="date-filter" class="input-field">
+              <option value="">All</option>
+            </select>
+          </div>
+          <div class="filter-container">
+            <label for="tournament-filter">FILTER BY TOURNAMENT</label>
+            <select id="tournament-filter" class="input-field">
+              <option value="">All</option>
+            </select>
+          </div>
+          <div class="search-container">
+            <label for="event-search">SEARCH EVENTS</label>
+            <input
+              type="text"
+              id="event-search"
+              class="input-field"
+              placeholder="Search events..."
+            />
+          </div>
+        </div>
+        <table id="event-table">
+          <thead>
+            <tr>
+              <th>DATE</th>
+              <th>TIME</th>
+              <th>SPORT</th>
+              <th>TOURNAMENT</th>
+              <th>MATCH</th>
+              <th>ACTIONS</th>
+            </tr>
+          </thead>
+          <tbody id="event-list">
+            <!-- Les événements seront générés dynamiquement par JavaScript -->
+          </tbody>
+        </table>
+      </section>
+
+      <!-- ALL CHANNELS -->
+      <section id="page-channels" class="page hidden">
+        <div class="loading-indicator" id="channels-loading">
+          Loading channels...
+        </div>
+        <div
+          class="error-message"
+          id="channels-error"
+          style="display: none"
+        ></div>
+        <div class="channel-filter-box">
+          <div class="filter-container">
+            <label for="country-filter">FILTER BY COUNTRY</label>
+            <select id="country-filter" class="input-field">
+              <option value="">All</option>
+            </select>
+          </div>
+          <div class="search-container">
+            <label for="channel-search">SEARCH CHANNELS</label>
+            <input
+              type="text"
+              id="channel-search"
+              class="input-field"
+              placeholder="Search channels..."
+            />
+          </div>
+        </div>
+        <table id="channel-table">
+          <thead>
+            <tr>
+              <th>CHANNEL NAME</th>
+              <th>CHANNEL LINK</th>
+              <th>ACTIONS</th>
+            </tr>
+          </thead>
+          <tbody id="channel-list">
+            <!-- Les chaînes seront générées dynamiquement par JavaScript -->
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+    <script src="js/navigation.js"></script>
+    <script src="js/themeToggle.js"></script>
+    <script src="js/streamManager.js"></script>
+    <script src="js/channelsManager.js"></script>
+    <script src="js/sportsEventManager.js"></script>
+    <!-- Script pour le mode cinéma -->
+    <script>
+      const cinemaButton = document.getElementById("cinema-mode");
+      const liveStream = document.getElementById("live-stream");
+      const body = document.body;
+      const moreLinks = document.querySelector(".more-links");
+      const streamInputBox = document.querySelector(".stream-input-box");
+      let isCinemaMode = false;
+
+      function toggleCinemaMode() {
+        console.log(`Toggling cinema mode. Current state: ${isCinemaMode}`);
+
+        if (window.innerWidth <= 768) {
+          if (!document.fullscreenElement) {
+            liveStream.requestFullscreen().catch((err) => {
+              console.error(
+                `Erreur lors du passage en plein écran: ${err.message}`
+              );
+            });
+          } else {
+            document.exitFullscreen().catch((err) => {
+              console.error(
+                `Erreur lors de la sortie du plein écran: ${err.message}`
+              );
+            });
+          }
+        } else {
+          isCinemaMode = !isCinemaMode;
+
+          if (isCinemaMode) {
+            console.log("Entering cinema mode");
+            liveStream.classList.add("cinema-mode");
+            moreLinks.classList.add("cinema-mode");
+            body.classList.add("cinema-background");
+            streamInputBox.classList.add("cinema-mode");
+            cinemaButton.textContent = "EXIT CINEMA MODE";
+          } else {
+            console.log("Exiting cinema mode");
+            liveStream.classList.remove("cinema-mode");
+            moreLinks.classList.remove("cinema-mode");
+            body.classList.remove("cinema-background");
+            streamInputBox.classList.remove("cinema-mode");
+            cinemaButton.textContent = "CINEMA MODE";
+          }
+        }
+      }
+
+      document.addEventListener("click", (e) => {
+        const target = e.target;
+
+        if (target === cinemaButton || target.closest("#cinema-mode")) {
+          console.log("Clicked on cinema button");
+          toggleCinemaMode();
+        } else if (
+          isCinemaMode &&
+          !liveStream.contains(target) &&
+          !moreLinks.contains(target)
+        ) {
+          console.log("Clicked outside to exit cinema mode");
+          toggleCinemaMode();
+        }
+      });
+    </script>
+  </body>
+</html>
