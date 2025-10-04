@@ -38,12 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       }
 
-      // Sauvegarder les données dans un fichier local pour le mécanisme de secours
-      await fetch('files/save_events.php', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(eventsData)
-      });
 
       // Remplir les filtres
       const sports = [...new Set(eventsData.map(event => event.sport))].sort();
@@ -74,40 +68,9 @@ document.addEventListener('DOMContentLoaded', () => {
       displayEvents(eventsData);
     } catch (error) {
       console.error('Erreur lors du chargement des événements :', error);
-      // Essayer de charger depuis le fichier de secours
-      try {
-        const fallbackResponse = await fetch('files/events.json');
-        eventsData = await fallbackResponse.json();
-        const sports = [...new Set(eventsData.map(event => event.sport))].sort();
-        sports.forEach(sport => {
-          const option = document.createElement('option');
-          option.value = sport;
-          option.textContent = sport;
-          sportFilter.appendChild(option);
-        });
-        const dates = [...new Set(eventsData.map(event => event.date))].sort();
-        dates.forEach(date => {
-          const option = document.createElement('option');
-          option.value = date;
-          option.textContent = date;
-          dateFilter.appendChild(option);
-        });
-        const tournaments = [...new Set(eventsData.map(event => event.tournament))].sort();
-        tournaments.forEach(tournament => {
-          const option = document.createElement('option');
-          option.value = tournament;
-          option.textContent = tournament;
-          tournamentFilter.appendChild(option);
-        });
-        displayEvents(eventsData);
-        errorMessage.textContent = 'Impossible de charger les données de l\'API. Utilisation des données locales.';
-        errorMessage.style.display = 'block';
-      } catch (fallbackError) {
-        console.error('Erreur lors du chargement des données de secours :', fallbackError);
-        eventList.innerHTML = '<tr><td colspan="6">Erreur lors du chargement des événements.</td></tr>';
-        errorMessage.textContent = 'Erreur critique : impossible de charger les événements.';
-        errorMessage.style.display = 'block';
-      }
+      eventList.innerHTML = '<tr><td colspan="6">Unable to load events. Please try again later.</td></tr>';
+      errorMessage.textContent = 'Unable to load events from API. Please check your connection and try again.';
+      errorMessage.style.display = 'block';
     } finally {
       loadingIndicator.style.display = 'none';
     }

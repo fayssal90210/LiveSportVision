@@ -25,12 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
       // Parser le CSV
       channelsData = parseCSV(csvText);
 
-      // Sauvegarder les données dans un fichier local pour le mécanisme de secours
-      await fetch('files/save_channels.php', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(channelsData)
-      });
 
       // Remplir le filtre de pays
       const countries = [...new Set(channelsData.map(channel => channel.country))].sort();
@@ -45,26 +39,9 @@ document.addEventListener('DOMContentLoaded', () => {
       displayChannels(channelsData);
     } catch (error) {
       console.error('Erreur lors du chargement des chaînes :', error);
-      // Essayer de charger depuis le fichier de secours
-      try {
-        const fallbackResponse = await fetch('files/channels.json');
-        channelsData = await fallbackResponse.json();
-        const countries = [...new Set(channelsData.map(channel => channel.country))].sort();
-        countries.forEach(country => {
-          const option = document.createElement('option');
-          option.value = country;
-          option.textContent = country;
-          countryFilter.appendChild(option);
-        });
-        displayChannels(channelsData);
-        errorMessage.textContent = 'Impossible de charger les données du CSV. Utilisation des données locales.';
-        errorMessage.style.display = 'block';
-      } catch (fallbackError) {
-        console.error('Erreur lors du chargement des données de secours :', fallbackError);
-        channelList.innerHTML = '<tr><td colspan="3">Erreur lors du chargement des chaînes.</td></tr>';
-        errorMessage.textContent = 'Erreur critique : impossible de charger les chaînes.';
-        errorMessage.style.display = 'block';
-      }
+      channelList.innerHTML = '<tr><td colspan="3">Unable to load channels. Please try again later.</td></tr>';
+      errorMessage.textContent = 'Unable to load channels from CSV. Please check your connection and try again.';
+      errorMessage.style.display = 'block';
     } finally {
       loadingIndicator.style.display = 'none';
     }
@@ -122,11 +99,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Ajouter les gestionnaires d'événements pour les boutons "Copy"
     document.querySelectorAll('.channel-link-copy').forEach(button => {
-      button.addEventListener('click', (e) => {
+      button.addEventListener('click', async (e) => {
         const input = e.target.previousElementSibling;
-        input.select();
-        document.execCommand('copy');
-        alert('Lien copié : ' + input.value);
+        try {
+          await navigator.clipboard.writeText(input.value);
+          const originalText = e.target.textContent;
+          e.target.textContent = 'Copied!';
+          setTimeout(() => {
+            e.target.textContent = originalText;
+          }, 2000);
+        } catch (err) {
+          console.error('Failed to copy:', err);
+          alert('Failed to copy link');
+        }
       });
     });
   }

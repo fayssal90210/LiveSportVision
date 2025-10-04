@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LIVE VISION</title>
+    <title>Live Vision - Sports Streaming</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap"
       rel="stylesheet"
@@ -26,21 +26,21 @@
               class="tab active"
               href="#"
               onclick="navigateTo('page-stream')"
-              >STREAM PAGE</a
+              ><i class="fas fa-play-circle" style="margin-right: 8px;"></i>Stream</a
             >
             <a
               id="nav-football"
               class="tab"
               href="#"
               onclick="navigateTo('page-football')"
-              >ALL SPORTS EVENT</a
+              ><i class="fas fa-calendar-alt" style="margin-right: 8px;"></i>Sports Events</a
             >
             <a
               id="nav-channels"
               class="tab"
               href="#"
               onclick="navigateTo('page-channels')"
-              >ALL CHANNELS</a
+              ><i class="fas fa-tv" style="margin-right: 8px;"></i>Channels</a
             >
           </div>
         </div>
@@ -60,16 +60,16 @@
       <section id="page-stream" class="page active">
         <div class="stream-section">
           <div class="stream-input-box">
-            <h3>ENTER STREAM URL</h3>
+            <h3><i class="fas fa-link" style="margin-right: 8px;"></i>Enter Stream URL</h3>
             <div class="input-container">
               <input
                 type="text"
                 id="stream-url"
                 class="input-field"
-                placeholder="Enter stream URL"
+                placeholder="https://example.com/stream"
                 value=""
               />
-              <button id="load-stream" class="play-button">PLAY</button>
+              <button id="load-stream" class="play-button"><i class="fas fa-play" style="margin-right: 6px;"></i>Play</button>
             </div>
           </div>
           <iframe
@@ -79,7 +79,7 @@
             allowfullscreen
           ></iframe>
           <div class="more-links">
-            <button id="cinema-mode" class="more-button">CINEMA MODE</button>
+            <button id="cinema-mode" class="more-button"><i class="fas fa-expand" style="margin-right: 8px;"></i>Cinema Mode</button>
           </div>
         </div>
       </section>
@@ -222,14 +222,14 @@
             moreLinks.classList.add("cinema-mode");
             body.classList.add("cinema-background");
             streamInputBox.classList.add("cinema-mode");
-            cinemaButton.textContent = "EXIT CINEMA MODE";
+            cinemaButton.innerHTML = '<i class="fas fa-compress" style="margin-right: 8px;"></i>Exit Cinema Mode';
           } else {
             console.log("Exiting cinema mode");
             liveStream.classList.remove("cinema-mode");
             moreLinks.classList.remove("cinema-mode");
             body.classList.remove("cinema-background");
             streamInputBox.classList.remove("cinema-mode");
-            cinemaButton.textContent = "CINEMA MODE";
+            cinemaButton.innerHTML = '<i class="fas fa-expand" style="margin-right: 8px;"></i>Cinema Mode';
           }
         }
       }
