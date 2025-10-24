@@ -129,11 +129,11 @@ body {
   width: 80%;
 }
 
-/* Styles pour le nouveau bouton dark mode */
+/* Theme Toggle - Modern Design */
 theme-toggle.floating {
   position: fixed;
-  bottom: 20px;
-  left: 20px;
+  bottom: 30px;
+  right: 30px;
   z-index: 1001;
   background: none;
   border: none;
@@ -144,26 +144,29 @@ theme-toggle.floating {
 }
 
 .theme-toggle {
-  background: none;
-  border: none;
-  padding: 8px;
+  background: var(--color-bg-card);
+  border: 2px solid var(--color-primary);
+  padding: 12px;
   border-radius: 50%;
   cursor: pointer;
-  transition: background 0.2s ease, transform 0.3s ease;
-  color: var(--font-color);
+  transition: all 0.3s ease;
+  color: var(--color-primary);
   position: relative;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
+  box-shadow: var(--shadow-gold);
 }
 
 .theme-toggle:hover {
-  background: rgba(61, 60, 60, 0.1);
-  transform: scale(1.1);
+  background: var(--color-primary);
+  color: var(--color-bg-dark);
+  transform: scale(1.1) rotate(15deg);
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
 }
 
 .theme-toggle:focus {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(61, 60, 60, 0.003);
+  box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.3);
 }
 
 .theme-toggle i {
@@ -172,7 +175,7 @@ theme-toggle.floating {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 24px;
+  font-size: 20px;
 }
 
 .sun,
