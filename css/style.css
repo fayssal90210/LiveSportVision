@@ -316,39 +316,55 @@ body.cinema-background .stream-input-box.cinema-mode {
 }
 
 .stream-input-box {
-  background-color: var(--color-secondary);
-  border: 1px solid var(--color-accent);
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: var(--color-bg-card);
+  border: 2px solid var(--color-accent);
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: var(--shadow-lg);
   width: 100%;
-  max-width: 640px;
+  max-width: 800px;
   text-align: center;
   transition: all 0.3s ease;
   box-sizing: border-box;
 }
 
+.stream-input-box:hover {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-gold);
+  transform: translateY(-2px);
+}
+
+.stream-input-box h3 {
+  color: var(--color-primary);
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 20px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
 #live-stream {
   width: 100%;
-  max-width: 640px;
+  max-width: 1000px;
   aspect-ratio: 16 / 9;
-  border-radius: 12px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 0 10px rgba(0, 0, 0, 0.1);
-  border: 2px solid var(--color-accent);
-  background: linear-gradient(145deg, #f0f0f0, #d0d0d0);
-  transition: width 0.5s ease, height 0.5s ease, top 0.5s ease, left 0.5s ease,
-    transform 0.5s ease;
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg);
+  border: 3px solid var(--color-accent);
+  background: var(--color-bg-secondary);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   box-sizing: border-box;
 }
 
 #live-stream.cinema-mode:hover {
-  transform: translate(-50%, -50%);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3), 0 0 15px rgba(0, 0, 0, 0.15);
+  transform: translate(-50%, -50%) scale(1.02);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.9);
+  border-color: var(--color-primary);
 }
 
 #live-stream:hover:not(.cinema-mode) {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3), 0 0 15px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  border-color: var(--color-primary);
 }
 
 /* Input and Buttons */
