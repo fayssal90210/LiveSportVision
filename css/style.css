@@ -425,10 +425,10 @@ body.cinema-background .stream-input-box.cinema-mode {
   transform: translateY(0) scale(1);
 }
 
-/* More Links */
+/* More Links & Buttons */
 .more-links {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 30px;
   width: 100%;
   z-index: 998;
   transition: all 0.3s ease;
@@ -437,7 +437,7 @@ body.cinema-background .stream-input-box.cinema-mode {
 @media (min-width: 769px) {
   .more-links.cinema-mode {
     position: fixed;
-    bottom: 30px;
+    bottom: 40px;
     left: 50%;
     transform: translateX(-50%);
     margin-top: 0;
@@ -447,40 +447,43 @@ body.cinema-background .stream-input-box.cinema-mode {
 .more-links:not(.cinema-mode) {
   position: static;
   transform: none;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .more-button {
   display: inline-block;
-  padding: 12px 20px;
-  background-color: var(--color-primary);
-  color: white;
+  padding: 14px 32px;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover) 100%);
+  color: var(--color-bg-dark);
   border: none;
   border-radius: 12px;
-  font-weight: bold;
+  font-weight: 700;
   cursor: pointer;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
   width: 100%;
-  max-width: 300px;
+  max-width: 350px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 16px;
 }
 
 body.cinema-background .more-button {
-  opacity: 0.3;
-  background-color: rgba(255, 165, 0, 0.5);
-  color: rgba(255, 255, 255, 0.5);
+  opacity: 0.7;
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.8), rgba(246, 199, 68, 0.8));
 }
 
 body.cinema-background .more-button:hover {
   opacity: 1;
-  background-color: var(--color-primary);
-  color: white;
+  background: var(--color-primary);
   transform: scale(1.05);
+  box-shadow: var(--shadow-gold);
 }
 
 .more-button:hover {
-  background-color: var(--color-accent);
-  transform: scale(1.05);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: var(--shadow-gold);
+  background: var(--color-primary);
 }
 
 /* Hidden Class */
