@@ -1,4 +1,4 @@
-/* General Styles */
+/* General Styles - DAZN Inspired */
 html,
 body {
   margin: 0;
@@ -6,32 +6,47 @@ body {
   height: 100%;
   width: 100%;
   font-family: "Roboto", sans-serif;
+  scroll-behavior: smooth;
 }
 
-/* Variables CSS pour les thèmes */
+/* DAZN-Inspired Color Variables */
 :root {
-  --color-primary: #ffa500;
-  --color-secondary: #ffffff;
-  --color-accent: #e0e0e0;
-  --font-color: #333333;
-  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --color-primary: #FFD700;
+  --color-primary-hover: #F6C744;
+  --color-bg-dark: #0A0A0A;
+  --color-bg-secondary: #1A1A1A;
+  --color-bg-card: #1F1F1F;
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #B0B0B0;
+  --color-accent: #2A2A2A;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --shadow-gold: 0 0 20px rgba(255, 215, 0, 0.2);
 }
 
 [data-theme="dark"] {
-  --color-primary: #ffa500;
-  --color-secondary: #2d2d2d;
-  --color-accent: #555555;
-  --font-color: #ffffff;
-  --shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  --color-primary: #FFD700;
+  --color-primary-hover: #F6C744;
+  --color-bg-dark: #0A0A0A;
+  --color-bg-secondary: #1A1A1A;
+  --color-bg-card: #1F1F1F;
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #B0B0B0;
+  --color-accent: #2A2A2A;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
 }
 
 body {
-  background-color: var(--color-secondary);
-  color: var(--font-color);
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-primary);
   margin: 0;
   padding: 0;
   transition: all 0.3s ease;
   position: relative;
+  overflow-x: hidden;
 }
 
 /* Header Styles */
