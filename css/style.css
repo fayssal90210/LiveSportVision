@@ -49,23 +49,25 @@ body {
   overflow-x: hidden;
 }
 
-/* Header Styles */
+/* Header Styles - DAZN Inspired */
 .header {
-  background-color: var(--color-secondary);
-  color: var(--font-color);
-  padding: 15px 20px;
-  box-shadow: var(--shadow);
-  border-radius: 0 0 12px 12px;
+  background: linear-gradient(180deg, #0A0A0A 0%, rgba(10, 10, 10, 0.95) 100%);
+  backdrop-filter: blur(10px);
+  color: var(--color-text-primary);
+  padding: 20px 40px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
   width: 100%;
   z-index: 1000;
-  transition: background-color 0.3s ease;
+  position: sticky;
+  top: 0;
+  transition: all 0.3s ease;
 }
 
 .nav-container {
   display: flex;
   align-items: center;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
@@ -77,36 +79,54 @@ body {
 
 .tabbed-menu {
   display: flex;
-  gap: 15px;
+  gap: 8px;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .tab {
   text-decoration: none;
-  color: var(--font-color);
-  font-size: 18px;
-  font-weight: 500;
-  padding: 8px 12px;
+  color: var(--color-text-primary);
+  font-size: 16px;
+  font-weight: 600;
+  padding: 12px 24px;
   border-radius: 8px;
-  transition: color 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
-  background-color: var(--color-accent);
+  transition: all 0.3s ease;
+  background-color: transparent;
   cursor: pointer;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tab::after {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: var(--color-primary);
+  transition: width 0.3s ease;
 }
 
 .tab:hover {
   color: var(--color-primary);
   transform: translateY(-2px);
-  background-color: rgba(255, 165, 0, 0.1);
+}
+
+.tab:hover::after {
+  width: 80%;
 }
 
 .tab.active {
-  border-bottom: 3px solid var(--color-primary);
-  background-color: transparent;
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.15), rgba(255, 215, 0, 0.05));
+  color: var(--color-primary);
 }
 
-.tabbed-menu a.active {
-  background-color: var(--color-primary);
-  color: white;
+.tab.active::after {
+  width: 80%;
 }
 
 /* Styles pour le nouveau bouton dark mode */
