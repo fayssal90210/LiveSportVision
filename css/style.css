@@ -367,48 +367,62 @@ body.cinema-background .stream-input-box.cinema-mode {
   border-color: var(--color-primary);
 }
 
-/* Input and Buttons */
+/* Input and Buttons - DAZN Style */
 .input-container {
   display: flex;
-  gap: 10px;
+  gap: 15px;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .input-field {
   border: 2px solid var(--color-accent);
   outline: none;
   flex-grow: 1;
-  padding: 12px;
+  padding: 14px 20px;
   font-size: 16px;
   border-radius: 12px;
-  background-color: var(--color-secondary);
-  color: var(--font-color);
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  max-width: 300px;
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text-primary);
+  transition: all 0.3s ease;
+  max-width: 400px;
+  font-weight: 500;
+}
+
+.input-field::placeholder {
+  color: var(--color-text-secondary);
 }
 
 .input-field:focus {
   border-color: var(--color-primary);
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+  background-color: var(--color-bg-card);
 }
 
 .play-button {
   border: none;
   cursor: pointer;
-  padding: 12px 20px;
-  background-color: var(--color-primary);
-  color: white;
+  padding: 14px 32px;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover) 100%);
+  color: var(--color-bg-dark);
   border-radius: 12px;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  font-weight: bold;
+  transition: all 0.3s ease;
+  font-weight: 700;
   text-transform: uppercase;
-  width: 100px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  min-width: 120px;
+  box-shadow: var(--shadow-md);
+  letter-spacing: 1px;
+  font-size: 16px;
 }
 
 .play-button:hover {
-  background-color: var(--color-accent);
-  transform: scale(1.05);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: var(--shadow-gold);
+  background: var(--color-primary);
+}
+
+.play-button:active {
+  transform: translateY(0) scale(1);
 }
 
 /* More Links */
