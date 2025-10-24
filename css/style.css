@@ -795,27 +795,39 @@ body.cinema-background .more-button:hover {
   box-shadow: var(--shadow-gold);
 }
 
-/* Responsive pour petits écrans */
+/* Responsive Design - DAZN Style */
 @media (max-width: 768px) {
+  .hero-title {
+    font-size: 36px;
+  }
+
+  .hero-subtitle {
+    font-size: 16px;
+  }
+
+  .hero-section {
+    height: 300px;
+  }
+
   #channel-table .channel-link-input,
   #event-table .channel-link-input {
     max-width: 150px;
   }
 
   .tabbed-menu {
-    gap: 10px;
+    gap: 8px;
   }
 
   .tab {
-    font-size: 14px;
-    padding: 6px 10px;
+    font-size: 13px;
+    padding: 10px 16px;
   }
 
   .stream-section {
     width: 100%;
     max-width: 100%;
     margin: 0 auto;
-    padding: 10px;
+    padding: 20px 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -838,22 +850,22 @@ body.cinema-background .more-button:hover {
   .event-filter-box,
   #channel-table,
   #event-table {
-    border-radius: 8px;
+    border-radius: 12px;
     width: 100%;
     margin: 0 auto;
   }
 
   .input-field {
-    padding: 10px;
-    border-radius: 8px;
+    padding: 12px 16px;
+    border-radius: 10px;
   }
 
   .play-button,
   .more-button,
   .copy-button,
   .channel-link-copy {
-    padding: 8px 12px;
-    border-radius: 8px;
+    padding: 12px 20px;
+    border-radius: 10px;
     width: auto;
     font-size: 14px;
   }
@@ -864,12 +876,12 @@ body.cinema-background .more-button:hover {
   #event-table th,
   #channel-table td,
   #event-table td {
-    padding: 6px 12px;
+    padding: 12px 16px;
   }
 
   .channel-filter-box label,
   .event-filter-box label {
-    font-size: 16px;
+    font-size: 12px;
   }
 
   body.cinema-background .more-links.cinema-mode {
@@ -883,12 +895,12 @@ body.cinema-background .more-button:hover {
   }
 
   body.cinema-background {
-    background-color: var(--color-secondary);
+    background-color: var(--color-bg-dark);
   }
 
   body.cinema-background .header {
-    background-color: var(--color-secondary);
-    color: var(--font-color);
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-primary);
   }
 
   #live-stream.cinema-mode {
@@ -898,6 +910,20 @@ body.cinema-background .more-button:hover {
     max-width: 100%;
     height: auto;
     max-height: none;
+  }
+
+  .header {
+    padding: 15px 20px;
+  }
+
+  theme-toggle.floating {
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .theme-toggle {
+    width: 45px;
+    height: 45px;
   }
 }
 
