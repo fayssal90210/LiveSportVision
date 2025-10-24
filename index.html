@@ -252,14 +252,14 @@
             moreLinks.classList.add("cinema-mode");
             body.classList.add("cinema-background");
             streamInputBox.classList.add("cinema-mode");
-            cinemaButton.textContent = "EXIT CINEMA MODE";
+            cinemaButton.innerHTML = '<i class="fas fa-compress"></i> EXIT CINEMA MODE';
           } else {
             console.log("Exiting cinema mode");
             liveStream.classList.remove("cinema-mode");
             moreLinks.classList.remove("cinema-mode");
             body.classList.remove("cinema-background");
             streamInputBox.classList.remove("cinema-mode");
-            cinemaButton.textContent = "CINEMA MODE";
+            cinemaButton.innerHTML = '<i class="fas fa-expand"></i> CINEMA MODE';
           }
         }
       }
