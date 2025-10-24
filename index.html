@@ -59,18 +59,27 @@
     <main>
       <!-- STREAM PAGE -->
       <section id="page-stream" class="page active">
+        <div class="hero-section">
+          <div class="hero-content">
+            <h1 class="hero-title">LIVE SPORTS VISION</h1>
+            <p class="hero-subtitle">Experience the thrill of live sports streaming - Anytime, Anywhere</p>
+          </div>
+        </div>
+        
         <div class="stream-section">
           <div class="stream-input-box">
-            <h3>ENTER STREAM URL</h3>
+            <h3><i class="fas fa-play-circle"></i> ENTER STREAM URL</h3>
             <div class="input-container">
               <input
                 type="text"
                 id="stream-url"
                 class="input-field"
-                placeholder="Enter stream URL"
+                placeholder="Paste your stream URL here..."
                 value=""
               />
-              <button id="load-stream" class="play-button">PLAY</button>
+              <button id="load-stream" class="play-button">
+                <i class="fas fa-play"></i> PLAY
+              </button>
             </div>
           </div>
           <iframe
@@ -80,106 +89,126 @@
             allowfullscreen
           ></iframe>
           <div class="more-links">
-            <button id="cinema-mode" class="more-button">CINEMA MODE</button>
+            <button id="cinema-mode" class="more-button">
+              <i class="fas fa-expand"></i> CINEMA MODE
+            </button>
           </div>
         </div>
       </section>
 
       <!-- ALL SPORTS EVENT -->
       <section id="page-football" class="page hidden">
-        <div class="loading-indicator" id="sports-loading">
-          Loading events...
-        </div>
-        <div
-          class="error-message"
-          id="sports-error"
-          style="display: none"
-        ></div>
-        <div class="event-filter-box">
-          <div class="filter-container">
-            <label for="sport-filter">FILTER BY SPORT</label>
-            <select id="sport-filter" class="input-field">
-              <option value="">All</option>
-            </select>
-          </div>
-          <div class="filter-container">
-            <label for="date-filter">FILTER BY DATE</label>
-            <select id="date-filter" class="input-field">
-              <option value="">All</option>
-            </select>
-          </div>
-          <div class="filter-container">
-            <label for="tournament-filter">FILTER BY TOURNAMENT</label>
-            <select id="tournament-filter" class="input-field">
-              <option value="">All</option>
-            </select>
-          </div>
-          <div class="search-container">
-            <label for="event-search">SEARCH EVENTS</label>
-            <input
-              type="text"
-              id="event-search"
-              class="input-field"
-              placeholder="Search events..."
-            />
+        <div class="hero-section">
+          <div class="hero-content">
+            <h1 class="hero-title">ALL SPORTS EVENTS</h1>
+            <p class="hero-subtitle">Discover upcoming matches and live sporting events worldwide</p>
           </div>
         </div>
-        <table id="event-table">
-          <thead>
-            <tr>
-              <th>DATE</th>
-              <th>TIME</th>
-              <th>SPORT</th>
-              <th>TOURNAMENT</th>
-              <th>MATCH</th>
-              <th>ACTIONS</th>
-            </tr>
-          </thead>
-          <tbody id="event-list">
-            <!-- Les événements seront générés dynamiquement par JavaScript -->
-          </tbody>
-        </table>
+        
+        <div style="padding: 0 20px; max-width: 1400px; margin: 0 auto;">
+          <div class="loading-indicator" id="sports-loading">
+            <i class="fas fa-spinner fa-spin"></i> Loading events...
+          </div>
+          <div
+            class="error-message"
+            id="sports-error"
+            style="display: none"
+          ></div>
+          <div class="event-filter-box">
+            <div class="filter-container">
+              <label for="sport-filter"><i class="fas fa-football-ball"></i> FILTER BY SPORT</label>
+              <select id="sport-filter" class="input-field">
+                <option value="">All Sports</option>
+              </select>
+            </div>
+            <div class="filter-container">
+              <label for="date-filter"><i class="fas fa-calendar-alt"></i> FILTER BY DATE</label>
+              <select id="date-filter" class="input-field">
+                <option value="">All Dates</option>
+              </select>
+            </div>
+            <div class="filter-container">
+              <label for="tournament-filter"><i class="fas fa-trophy"></i> FILTER BY TOURNAMENT</label>
+              <select id="tournament-filter" class="input-field">
+                <option value="">All Tournaments</option>
+              </select>
+            </div>
+            <div class="search-container">
+              <label for="event-search"><i class="fas fa-search"></i> SEARCH EVENTS</label>
+              <input
+                type="text"
+                id="event-search"
+                class="input-field"
+                placeholder="Search for events..."
+              />
+            </div>
+          </div>
+          <table id="event-table">
+            <thead>
+              <tr>
+                <th><i class="fas fa-calendar"></i> DATE</th>
+                <th><i class="fas fa-clock"></i> TIME</th>
+                <th><i class="fas fa-futbol"></i> SPORT</th>
+                <th><i class="fas fa-trophy"></i> TOURNAMENT</th>
+                <th><i class="fas fa-users"></i> MATCH</th>
+                <th><i class="fas fa-cog"></i> ACTIONS</th>
+              </tr>
+            </thead>
+            <tbody id="event-list">
+              <!-- Events will be populated dynamically by JavaScript -->
+            </tbody>
+          </table>
+        </div>
       </section>
 
       <!-- ALL CHANNELS -->
       <section id="page-channels" class="page hidden">
-        <div class="loading-indicator" id="channels-loading">
-          Loading channels...
-        </div>
-        <div
-          class="error-message"
-          id="channels-error"
-          style="display: none"
-        ></div>
-        <div class="channel-filter-box">
-          <div class="filter-container">
-            <label for="country-filter">FILTER BY COUNTRY</label>
-            <select id="country-filter" class="input-field">
-              <option value="">All</option>
-            </select>
-          </div>
-          <div class="search-container">
-            <label for="channel-search">SEARCH CHANNELS</label>
-            <input
-              type="text"
-              id="channel-search"
-              class="input-field"
-              placeholder="Search channels..."
-            />
+        <div class="hero-section">
+          <div class="hero-content">
+            <h1 class="hero-title">ALL CHANNELS</h1>
+            <p class="hero-subtitle">Browse and access sports channels from around the globe</p>
           </div>
         </div>
-        <table id="channel-table">
-          <thead>
-            <tr>
-              <th>CHANNEL NAME</th>
-              <th>CHANNEL LINK</th>
-              <th>ACTIONS</th>
-            </tr>
-          </thead>
-          <tbody id="channel-list">
-            <!-- Les chaînes seront générées dynamiquement par JavaScript -->
-          </tbody>
-        </table>
+        
+        <div style="padding: 0 20px; max-width: 1400px; margin: 0 auto;">
+          <div class="loading-indicator" id="channels-loading">
+            <i class="fas fa-spinner fa-spin"></i> Loading channels...
+          </div>
+          <div
+            class="error-message"
+            id="channels-error"
+            style="display: none"
+          ></div>
+          <div class="channel-filter-box">
+            <div class="filter-container">
+              <label for="country-filter"><i class="fas fa-globe"></i> FILTER BY COUNTRY</label>
+              <select id="country-filter" class="input-field">
+                <option value="">All Countries</option>
+              </select>
+            </div>
+            <div class="search-container">
+              <label for="channel-search"><i class="fas fa-search"></i> SEARCH CHANNELS</label>
+              <input
+                type="text"
+                id="channel-search"
+                class="input-field"
+                placeholder="Search for channels..."
+              />
+            </div>
+          </div>
+          <table id="channel-table">
+            <thead>
+              <tr>
+                <th><i class="fas fa-tv"></i> CHANNEL NAME</th>
+                <th><i class="fas fa-link"></i> CHANNEL LINK</th>
+                <th><i class="fas fa-cog"></i> ACTIONS</th>
+              </tr>
+            </thead>
+            <tbody id="channel-list">
+              <!-- Channels will be populated dynamically by JavaScript -->
+            </tbody>
+          </table>
+        </div>
       </section>
     </main>
 
