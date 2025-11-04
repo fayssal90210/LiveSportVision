@@ -817,15 +817,21 @@ body.cinema-background .more-button:hover {
 /* Responsive Design - DAZN Style */
 @media (max-width: 768px) {
   .hero-title {
-    font-size: 36px;
+    font-size: 28px;
+    letter-spacing: 1px;
   }
 
   .hero-subtitle {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .hero-section {
-    height: 300px;
+    height: 180px;
+    margin-bottom: 20px;
+  }
+
+  .hero-content {
+    padding: 15px;
   }
 
   #channel-table .channel-link-input,
