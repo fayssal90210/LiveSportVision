@@ -25,6 +25,21 @@ body {
   --shadow-gold: 0 0 20px rgba(255, 215, 0, 0.2);
 }
 
+[data-theme="light"] {
+  --color-primary: #F6C744;
+  --color-primary-hover: #FFD700;
+  --color-bg-dark: #FFFFFF;
+  --color-bg-secondary: #F5F5F5;
+  --color-bg-card: #FFFFFF;
+  --color-text-primary: #1A1A1A;
+  --color-text-secondary: #666666;
+  --color-accent: #E0E0E0;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.2);
+  --shadow-gold: 0 0 20px rgba(246, 199, 68, 0.3);
+}
+
 [data-theme="dark"] {
   --color-primary: #FFD700;
   --color-primary-hover: #F6C744;
