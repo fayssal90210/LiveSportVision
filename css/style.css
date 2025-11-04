@@ -943,7 +943,7 @@ body.cinema-background .more-button:hover {
 
   theme-toggle.floating {
     bottom: 20px;
-    right: 20px;
+    left: 20px;
   }
 
   .theme-toggle {
