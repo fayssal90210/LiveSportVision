@@ -815,6 +815,20 @@ body.cinema-background .more-button:hover {
 }
 
 /* Responsive Design - DAZN Style */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .hero-title {
+    font-size: 36px;
+  }
+
+  .hero-subtitle {
+    font-size: 15px;
+  }
+
+  .hero-section {
+    height: 220px;
+  }
+}
+
 @media (max-width: 768px) {
   .hero-title {
     font-size: 28px;
