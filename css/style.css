@@ -690,6 +690,7 @@ body.cinema-background .more-button:hover {
   color: var(--color-primary);
   text-transform: uppercase;
   letter-spacing: 1px;
+  text-shadow: var(--text-shadow-subtitle);
 }
 
 /* Channel Table Styles - Modern Card Design */
