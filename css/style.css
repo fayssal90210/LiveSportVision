@@ -797,7 +797,7 @@ body.cinema-background .more-button:hover {
 #channel-table .channel-link-copy {
   padding: 10px 18px;
   font-size: 14px;
-  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-hover));
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
   color: var(--color-bg-dark);
   border: none;
   border-radius: 8px;
@@ -812,6 +812,7 @@ body.cinema-background .more-button:hover {
 #channel-table .channel-link-copy:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-gold);
+  background: linear-gradient(135deg, #FFA500 0%, #FF8C00 100%);
 }
 
 /* Responsive Design - DAZN Style */
