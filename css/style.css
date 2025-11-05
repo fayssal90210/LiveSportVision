@@ -603,6 +603,7 @@ body.cinema-background .more-button:hover {
   letter-spacing: 1px;
   font-size: 14px;
   box-shadow: var(--shadow-sm);
+  text-shadow: var(--text-shadow-subtitle);
 }
 
 #event-table th:first-child {
