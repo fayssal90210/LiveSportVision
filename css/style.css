@@ -721,6 +721,7 @@ body.cinema-background .more-button:hover {
   letter-spacing: 1px;
   font-size: 14px;
   box-shadow: var(--shadow-sm);
+  text-shadow: var(--text-shadow-subtitle);
 }
 
 #channel-table th:first-child {
