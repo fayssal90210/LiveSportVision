@@ -75,7 +75,7 @@ body {
   background: var(--color-bg-secondary);
   backdrop-filter: blur(10px);
   color: var(--color-text-primary);
-  padding: 20px 40px;
+  padding: 12px 40px;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
   width: 100%;
   z-index: 1000;
@@ -101,7 +101,7 @@ body {
 
 .tabbed-menu {
   display: flex;
-  gap: 8px;
+  gap: 6px;
   flex-wrap: wrap;
   align-items: center;
 }
@@ -109,9 +109,9 @@ body {
 .tab {
   text-decoration: none;
   color: var(--color-text-primary);
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
-  padding: 12px 24px;
+  padding: 8px 18px;
   border-radius: 8px;
   transition: all 0.3s ease;
   background-color: transparent;
@@ -124,7 +124,7 @@ body {
 .tab::after {
   content: '';
   position: absolute;
-  bottom: 8px;
+  bottom: 6px;
   left: 50%;
   transform: translateX(-50%);
   width: 0;
