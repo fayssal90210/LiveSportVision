@@ -28,8 +28,8 @@ body {
 }
 
 [data-theme="light"] {
-  --color-primary: #D4AF37;
-  --color-primary-hover: #B8941F;
+  --color-primary: #1A1A1A;
+  --color-primary-hover: #333333;
   --color-bg-dark: #FFFFFF;
   --color-bg-secondary: #F8F9FA;
   --color-bg-card: #FFFFFF;
@@ -39,9 +39,9 @@ body {
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
   --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.15);
   --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.2);
-  --shadow-gold: 0 0 20px rgba(212, 175, 55, 0.3);
-  --text-shadow-hero: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  --text-shadow-subtitle: 1px 1px 3px rgba(0, 0, 0, 0.4);
+  --shadow-gold: 0 0 20px rgba(26, 26, 26, 0.2);
+  --text-shadow-hero: none;
+  --text-shadow-subtitle: none;
 }
 
 [data-theme="dark"] {
