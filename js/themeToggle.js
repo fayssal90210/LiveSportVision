@@ -31,11 +31,10 @@ class ThemeToggle extends HTMLElement {
       if (savedTheme) {
         return savedTheme === "dark";
       }
-      // Sinon, utiliser la préférence système
-      return this.query.matches;
+      // DEFAULT TO DARK MODE for new visitors
+      return true;
     }
   }
   
   // Définir le composant personnalisé
   customElements.define("theme-toggle", ThemeToggle);
-  
