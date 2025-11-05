@@ -355,6 +355,7 @@ body.cinema-background .stream-input-box.cinema-mode {
   margin: 0 0 20px 0;
   text-transform: uppercase;
   letter-spacing: 1px;
+  text-shadow: var(--text-shadow-subtitle);
 }
 
 #live-stream {
