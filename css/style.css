@@ -13,45 +13,51 @@ body {
 :root {
   --color-primary: #FFD700;
   --color-primary-hover: #F6C744;
-  --color-bg-dark: #0A0A0A;
-  --color-bg-secondary: #1A1A1A;
-  --color-bg-card: #1F1F1F;
+  --color-bg-dark: #1A1A1A;
+  --color-bg-secondary: #252525;
+  --color-bg-card: #2A2A2A;
   --color-text-primary: #FFFFFF;
   --color-text-secondary: #B0B0B0;
-  --color-accent: #2A2A2A;
+  --color-accent: #333333;
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
   --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
   --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
   --shadow-gold: 0 0 20px rgba(255, 215, 0, 0.2);
+  --text-shadow-hero: none;
+  --text-shadow-subtitle: none;
 }
 
 [data-theme="light"] {
-  --color-primary: #F6C744;
-  --color-primary-hover: #FFD700;
+  --color-primary: #D4AF37;
+  --color-primary-hover: #B8941F;
   --color-bg-dark: #FFFFFF;
-  --color-bg-secondary: #F5F5F5;
+  --color-bg-secondary: #F8F9FA;
   --color-bg-card: #FFFFFF;
   --color-text-primary: #1A1A1A;
-  --color-text-secondary: #666666;
+  --color-text-secondary: #555555;
   --color-accent: #E0E0E0;
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
   --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.15);
   --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.2);
-  --shadow-gold: 0 0 20px rgba(246, 199, 68, 0.3);
+  --shadow-gold: 0 0 20px rgba(212, 175, 55, 0.3);
+  --text-shadow-hero: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  --text-shadow-subtitle: 1px 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 [data-theme="dark"] {
   --color-primary: #FFD700;
   --color-primary-hover: #F6C744;
-  --color-bg-dark: #0A0A0A;
-  --color-bg-secondary: #1A1A1A;
-  --color-bg-card: #1F1F1F;
+  --color-bg-dark: #1A1A1A;
+  --color-bg-secondary: #252525;
+  --color-bg-card: #2A2A2A;
   --color-text-primary: #FFFFFF;
   --color-text-secondary: #B0B0B0;
-  --color-accent: #2A2A2A;
+  --color-accent: #333333;
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
   --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
   --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --text-shadow-hero: none;
+  --text-shadow-subtitle: none;
 }
 
 body {
