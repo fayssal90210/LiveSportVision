@@ -418,7 +418,7 @@ body.cinema-background .stream-input-box.cinema-mode {
   border: none;
   cursor: pointer;
   padding: 14px 32px;
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover) 100%);
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
   color: var(--color-bg-dark);
   border-radius: 12px;
   transition: all 0.3s ease;
@@ -433,7 +433,7 @@ body.cinema-background .stream-input-box.cinema-mode {
 .play-button:hover {
   transform: translateY(-2px) scale(1.05);
   box-shadow: var(--shadow-gold);
-  background: var(--color-primary);
+  background: linear-gradient(135deg, #FFA500 0%, #FF8C00 100%);
 }
 
 .play-button:active {
