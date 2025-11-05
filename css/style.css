@@ -820,7 +820,7 @@ body.cinema-background .more-button:hover {
   }
 
   .hero-section {
-    height: 220px;
+    padding: 35px 20px;
   }
 }
 
@@ -835,12 +835,8 @@ body.cinema-background .more-button:hover {
   }
 
   .hero-section {
-    height: 180px;
+    padding: 30px 15px;
     margin-bottom: 20px;
-  }
-
-  .hero-content {
-    padding: 15px;
   }
 
   #channel-table .channel-link-input,
